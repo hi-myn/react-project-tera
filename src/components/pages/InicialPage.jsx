@@ -1,8 +1,13 @@
 //rfc -> cria uma função base de componentes
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import LoadingApp from "../organisms/LoadingApp";
+
 import logo from "../../images/logo.svg";
 
 export default function InicialPage() {
+  const navigate = useNavigate();
+
   const [users, setUsers] = React.useState([]);
   const [currentUser, setCurrentUser] =
     React.useState(
@@ -23,10 +28,10 @@ export default function InicialPage() {
   }, []);
 
   const handleUserChange = (e) => setCurrentUser(e.target.value);
-  const handleSubmit = (e) => console.log(e);
+  const handleSubmit = (e) => navigate(`/users/${currentUser}`);
 
   return isLoading ? (
-    <h1>LOADING...</h1>
+    <LoadingApp />
   ) : (
     <div className="home center">
       <div className="home__logo">
