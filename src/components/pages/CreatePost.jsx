@@ -1,19 +1,9 @@
 import React from "react";
-import logo from "../../images/logo.svg";
-
+import Default from "../templates/Default";
 
 export default function CreatePost() {
   return (
-    <div class="wrapper">
-      <div class="app-header">
-        <div class="app-header__logo">
-          <img src={logo} class="responsive" alt="" />
-        </div>
-        <div class="app-header__menu">
-          <i class="fa fa-bars"></i>
-        </div>
-      </div>
-
+    <Default>
       <div class="create-post">
         <h1>Criar</h1>
 
@@ -29,8 +19,6 @@ export default function CreatePost() {
           <button class="button-primary">Salvar</button>
         </form>
       </div>
-
-      <div class="app-footer">Módulo React :: Full Stack Development</div>
-    </div>
+    </Default>
   );
 }
